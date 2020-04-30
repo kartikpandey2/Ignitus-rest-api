@@ -7,7 +7,9 @@
     "start-dev": "nodemon --watch app.js --watch bin --watch config --watch controllers --watch helper --watch middlewares --watch models --watch routes --watch views -e js,json ./bin/www",
     "lint": "eslint ./ --ext .js",
     "lint:fix": "eslint ./ --ext .js --fix",
-    "test": "nyc mocha **/*.spec.js"
+    "test": "nyc mocha **/*.spec.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "nyc": {
     "check-coverage": false,
@@ -55,12 +57,14 @@
     "nodemailer": "^4.6.5",
     "nyc": "^13.0.1",
     "pug": "2.0.0-beta11",
-    "serve-favicon": "~2.4.5"
+    "serve-favicon": "~2.4.5",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "eslint": "^5.6.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "nodemon": "^1.18.3"
-  }
+  },
+  "snyk": true
 }
